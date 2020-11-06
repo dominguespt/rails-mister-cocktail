@@ -1,0 +1,9 @@
+<h2>New cocktail</h2>
+
+<%= simple_form_for @cocktail do |f| %>
+<%= f.input :name, input_html: { autocomplete: 'off' } %>
+<%= f.input :photo, as: :file %>
+
+<%= link_to 'Cancel', cocktails_path, class: 'btn btn-outline-secondary' %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>

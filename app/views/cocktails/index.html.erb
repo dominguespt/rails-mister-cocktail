@@ -1,0 +1,19 @@
+
+<% if @cocktails.any? %>
+<h3>List of cocktails</h3>
+
+<ul>
+  <% @cocktails.each do |cocktail| %>
+  <li>
+    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  </li>
+  <% end %>
+</ul>
+<% else %>
+<h3>Bummer 😿</h3>
+<p class="empty-state">
+  You don't have any cocktails yet. Get the party started by
+  <strong><%= link_to 'adding your first one now', new_cocktail_path %></strong>!
+</p>
+<% end %>
+

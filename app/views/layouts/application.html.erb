@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsMisterCocktail</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<head>
+  <title>🍹 Mr Cocktail</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <%= link_to 'Mr Cocktail! 🍹', root_path, class: 'navbar-brand' %>
+      <%= link_to new_cocktail_path, class: 'btn btn-sm btn-outline-primary' do %>
+      <i class="fa fa-plus"></i> Add new cocktail
+      <% end %>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
     <%= yield %>
-  </body>
+
+    <footer class="mt-5">
+      &copy; <%= Date.today.year %> Ricardo Otero All Rights Reserved and copied by Luis to learn
+    </footer>
+  </div>
+</body>
+
 </html>
